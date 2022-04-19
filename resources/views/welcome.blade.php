@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> Bienvenido!!!! </h1>
+    <h1> Bienvenido!!!! {{$user->name}} </h1>
     <a href="/contacto">Contacto</a>
     <br />
     <a href="{{ route('contacto') }}">Contacto (Contacto con nombre)</a>
