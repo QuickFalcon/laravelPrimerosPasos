@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    <h1> <?php echo $msj; ?></h1>
+    <h1> <?= $msj ?> </h1>
     <h1> {{$msj}} </h1>
 </body>
 </html>
