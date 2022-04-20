@@ -9,6 +9,12 @@
 <body>
     <h1>Create Post</h1>
 
+    @if ($errors->any())
+        @foreach($errors->all() as $error)
+            <div class='error'> {{$error}} </div>
+        @endforeach
+    @endif
+
     <form action="{{ route('post.store') }}" method="post">
         @csrf
 
