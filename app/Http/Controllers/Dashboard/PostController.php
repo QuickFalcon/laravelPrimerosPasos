@@ -41,6 +41,8 @@ class PostController extends Controller
     {
         // echo request('title');
         // echo $request->input('title');
+        $data = array_merge($request->all(), ['image' => '']);
+        Post::create($data);
     }
 
     /**

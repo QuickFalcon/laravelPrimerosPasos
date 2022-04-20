@@ -19,7 +19,7 @@
         <input type="text" name='slug'>
 
         <label>Category</label>
-        <select name="categories">
+        <select name="category_id">
             @foreach ( $categories as $title => $id )
                 <option value="{{ $id }}">{{ $title }}</option>
             @endforeach
