@@ -1,46 +1,38 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create Post</title>
-</head>
-<body>
-    <h1>Create Post</h1>
+@extends('dashboard.layout');
 
-    @include('dashboard.fragment._errors-form')
+@section('content')
+<h1>Create Post</h1>
 
-    <form action="{{ route('post.store') }}" method="post">
-        @csrf
+@include('dashboard.fragment._errors-form')
 
-        <label>Title</label>
-        <input type="text" name='title'>
+<form action="{{ route('post.store') }}" method="post">
+    @csrf
 
-        <label>Slug</label>
-        <input type="text" name='slug'>
+    <label>Title</label>
+    <input type="text" name='title'>
 
-        <label>Category</label>
-        <select name="category_id">
-            @foreach ( $categories as $title => $id )
-                <option value="{{ $id }}">{{ $title }}</option>
-            @endforeach
-        </select>
+    <label>Slug</label>
+    <input type="text" name='slug'>
 
-        <label>Posted</label>
-        <select name="posted">
-            <option value='not'> Not </option>
-            <option value='yes'> Yes </option>
-        </select>
+    <label>Category</label>
+    <select name="category_id">
+        @foreach ( $categories as $title => $id )
+            <option value="{{ $id }}">{{ $title }}</option>
+        @endforeach
+    </select>
 
-        <label>Content</label>
-        <textarea name='content'></textarea>
+    <label>Posted</label>
+    <select name="posted">
+        <option value='not'> Not </option>
+        <option value='yes'> Yes </option>
+    </select>
 
-        <label>Description</label>
-        <textarea name='description'></textarea>
+    <label>Content</label>
+    <textarea name='content'></textarea>
 
-        <button type="submit">Submit</button>
-    </form>
-    
-</body>
-</html>
+    <label>Description</label>
+    <textarea name='description'></textarea>
+
+    <button type="submit">Submit</button>
+</form>
+@endsection
