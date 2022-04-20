@@ -18,6 +18,19 @@
         <label>Slug</label>
         <input type="text" name='slug'>
 
+        <label>Category</label>
+        <select name="categories">
+            @foreach ( $categories as $category )
+                <option value="{{ $category->id }}">{{ $category->title }}</option>
+            @endforeach
+        </select>
+
+        <label>Posted</label>
+        <select name="posted">
+            <option value='not'> Not </option>
+            <option value='yes'> Yes </option>
+        </select>
+
         <label>Content</label>
         <textarea name='content'></textarea>
 
