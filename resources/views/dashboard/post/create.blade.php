@@ -20,8 +20,8 @@
 
         <label>Category</label>
         <select name="categories">
-            @foreach ( $categories as $category )
-                <option value="{{ $category->id }}">{{ $category->title }}</option>
+            @foreach ( $categories as $title => $id )
+                <option value="{{ $id }}">{{ $title }}</option>
             @endforeach
         </select>
 
