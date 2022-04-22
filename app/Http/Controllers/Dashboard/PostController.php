@@ -49,8 +49,9 @@ class PostController extends Controller
         // dd($validated->fails());
         // dd($validated->errors());
 
-        $data = array_merge($request->all(), ['image' => '']);
-        Post::create($data);
+        // $data = array_merge($request->all(), ['image' => '']);
+        // Post::create($data);
+        Post::create($request->validated());
     }
 
     /**
