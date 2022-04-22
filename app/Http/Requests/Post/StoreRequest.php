@@ -18,7 +18,7 @@ class StoreRequest extends FormRequest
     static public function myRules() {
         return [
             'title' => 'required|min:5|max:500',
-            'slug' => 'required|min:5|max:500',
+            'slug' => 'required|min:5|max:500|unique:posts',
             'content' => 'required|min:7',
             'category_id' => 'required|integer',
             'description' => 'required|min:7',
